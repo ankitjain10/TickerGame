@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:id="@+id/icon">
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Counter is : "
+        android:gravity="center"
+        android:id="@+id/outputText"
+        android:layout_alignParentTop="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="Player 1"
+        android:background="#ff0000ff"
+        android:visibility="invisible"
+        android:id="@+id/addButton"
+        android:gravity="center"
+        android:layout_alignTop="@+id/startButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/startButton"
+        android:layout_toStartOf="@+id/startButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="Player 2"
+        android:id="@+id/subButton"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/startButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/startButton"
+        android:layout_toEndOf="@+id/startButton"
+        android:background="#ff00e300" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:text="Start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/outputText"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="40dp"
+        android:text="Winner is : "
+        android:visibility="invisible"
+        android:layout_below="@id/startButton"
+        android:gravity="center"
+        android:id="@+id/resultText"
+
+        />
+
+
+    <TextView
+        android:id="@+id/timer"
+        android:text="Time: "
+        android:layout_marginLeft="100dp"
+        android:paddingRight="10dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resultText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/timeElapsed"
+        android:text="Time elapsed: "
+        android:paddingRight="10dip"
+        android:layout_marginLeft="100dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timer"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="PLAYER 1 TAP BELOW"
+        android:id="@+id/textView"
+        android:layout_above="@+id/addButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/outputText"
+        android:layout_toLeftOf="@+id/startButton"
+        android:layout_toStartOf="@+id/startButton"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="PLAYER 2 TAP BELOW"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/subButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toRightOf="@+id/timeElapsed"
+        android:layout_toEndOf="@+id/timeElapsed"
+        android:gravity="center" />
+
+</RelativeLayout>
