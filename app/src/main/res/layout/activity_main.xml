@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Counter is : "
+        android:text="Counter is : 0"
         android:gravity="center"
         android:id="@+id/outputText"
         android:layout_alignParentTop="true"

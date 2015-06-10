@@ -22,13 +22,15 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private Button startButton;
     private TextView text;
     private TextView timeElapsedView;
-
     private final long startTime = 10000;
     private final long interval = 1000;
 
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         counter =0;
@@ -40,11 +42,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         timeElapsedView = (TextView) this.findViewById(R.id.timeElapsed);
 
         countDownTimer = new CountDownTimer(startTime, interval) {
+
             @Override
             public void onTick(long millisUntilFinished) {
-                text.setText("Time remain:" +  millisUntilFinished);
+                text.setText("Time remain:" +  (millisUntilFinished / 1000) + " sec");
                 timeElapsed = startTime - millisUntilFinished;
-                timeElapsedView.setText("Time Elapsed: " + String.valueOf(timeElapsed));
+                timeElapsedView.setText("Time Elapsed: " + (timeElapsed/1000+1) + " sec");
             }
 
             @Override
@@ -52,7 +55,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 resultText=(TextView)findViewById(R.id.resultText);
                 resultText.setVisibility(resultText.VISIBLE);
                 text.setText("Time's up!");
-                timeElapsedView.setText("Time Elapsed: " + String.valueOf(startTime));
+                long totalTime= (int) (startTime/1000);
+                timeElapsedView.setText("Time Elapsed: " + totalTime + " sec");
                 addButton.setVisibility(addButton.INVISIBLE);
                 subButton.setVisibility(subButton.INVISIBLE);
                 startButton.setText("RESET");
@@ -60,8 +64,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     resultText.setTextColor(Color.BLUE);
                     resultText.setText("Player 1 Wins!! ");
                     outputText.setText("Restart the Game!!");
-
-
                 }
                 else if(counter<0){
                     resultText.setTextColor(Color.GREEN);
@@ -69,7 +71,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     outputText.setText("Restart the Game!!");
 
                 }
-                else {
+
+                else{
                     resultText.setTextColor(Color.RED);
                     resultText.setText("Nobody Wins! Try Again");
                     outputText.setText("Restart the Game!!");
@@ -82,7 +85,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         };
 
-        text.setText(text.getText() + String.valueOf(startTime));
+        text.setText(text.getText() + String.valueOf(startTime/1000)+ " sec");
 
 
         addButton=(Button)findViewById(R.id.addButton);
@@ -137,11 +140,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             timerHasStarted = false;
             startButton.setText("Start");
             outputText.setText("counter value is : 0");
-       //     addButton.setVisibility(addButton.INVISIBLE);
-       //     subButton.setVisibility(subButton.INVISIBLE);
+            addButton.setVisibility(addButton.INVISIBLE);
+            subButton.setVisibility(subButton.INVISIBLE);
             resultText.setVisibility(resultText.INVISIBLE);
         }
-    }
+        }
 
 
 }
